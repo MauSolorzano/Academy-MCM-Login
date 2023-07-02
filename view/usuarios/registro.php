@@ -17,26 +17,26 @@ require 'view/menu.php';
 
           <div class="form-outline mb-4 ">
             <label class="" for=""> Nombre</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="Brenjuan" required/>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre del Usuario" required/>
             <!-- <label class="form-label" for="loginName">Email or username</label> -->
           </div>
           <!-- Email input -->
           <div class="form-outline mb-4 ">
             <label class="" for=""> Correo Electrónico</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="brenjuan@example.com" required/>
+            <input type="email" name="email" id="email" class="form-control" placeholder="user@example.com" required/>
             <!-- <label class="form-label" for="loginName">Email or username</label> -->
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <label class="" for=""> Contraseña</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="" required/>
+            <input type="password" id="password" name="password" class="form-control" placeholder="###" required/>
             <!-- <label class="form-label" for="loginPassword">Password</label> -->
           </div>
 
           <div class="form-outline mb-4">
             <label class="" for="">Confirmar contraseña</label>
-            <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" placeholder="" required/>
+            <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" placeholder="###" required/>
             <!-- <label class="form-label" for="loginPassword">Password</label> -->
           </div>
 

@@ -3,23 +3,20 @@
 include_once 'class/grupos.php';
 
 
-class GruposModel extends Model
-{
+class GruposModel extends Model{
 
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
     }
 
-    public function getGrupos()
-    {
+    public function getGrupos(){
         $items = [];
         try {
             //code...
             $stringSQL = "SELECT * FROM `grupo` order by id DESC;";
             $query = $this->db->connect()->query($stringSQL);
 
-            while ($row = $query->fetch()) { //obtiene todas las filas
+            while ( $row = $query->fetch()){//obtiene todas las filas
                 $item = new classGrupos();
 
                 foreach ($row as $key => $value) {
@@ -35,10 +32,9 @@ class GruposModel extends Model
         }
     }
 
-    public function insertargrupo($datos)
-    {
-
-        //# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
+    public function insertargrupo($datos){
+        
+//# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
         try {
             //code...
             //$datos['id'] = "0";
@@ -47,6 +43,7 @@ class GruposModel extends Model
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;
+
         } catch (PDOException $th) {
             //throw $th;
             //var_dump($th);
@@ -54,33 +51,32 @@ class GruposModel extends Model
         }
     }
 
-    public function verGrupos($id)
-    {
-        //var_dump($_SESSION);
+    public function verGrupos($id){
         try {
             $item = new classGrupos();
             //code...
             $stringSQL = "Select * FROM `grupo` where id=:id;";
             $query = $this->db->connect()->prepare($stringSQL);
-            $query->execute(['id' => $id]);
+            $query->execute(['id'=>$id]);
 
-            while ($row = $query->fetch()) { //obtiene la fila
+            while ( $row = $query->fetch()){//obtiene la fila
                 foreach ($row as $key => $value) {
                     # code...
                     $item->$key = $value;
-                    // $_SESSION['autenticado'] = true;
+                   // $_SESSION['autenticado'] = true;
                 }
             }
             return $item;
         } catch (PDOException $th) {
             //throw $th;
             return [];
-        }
+        }           
     }
     public function actualizarGrupo($datos)
     {
         try {
-            //code...                              
+            //code...     
+            var_dump($datos);                         
             $datos['usuario'] = "Prof Mario";
             $stringSQL = 'UPDATE grupo SET nombre=:nombre WHERE id=:id ;';
             $query = $this->db->connect()->prepare($stringSQL);

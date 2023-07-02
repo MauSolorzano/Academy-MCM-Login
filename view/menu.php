@@ -17,7 +17,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
       <ul class="navbar-nav flex-grow-1">
         <li class="nav-item">
-          <a href="<?php echo constant('URL'); ?>index" class="nav-link active">Inicio</a>
+          <a href="<?php echo constant('URL'); ?>main" class="nav-link active">Inicio</a>
         </li>
         <?php if ($sesionInciada) { ?>
           <li class="nav-item dropdown">
@@ -69,11 +69,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
           </li>
         <?php } else { ?>
           <li class="nav-item">
-            <a class="nav-link text-light" href="<?php echo constant('URL'); ?>usuarios/login">Iniciar sesión</a>
+            <a class="nav-link text-light" href="<?php echo constant('URL'); ?>usuarios/verLogin">Iniciar sesión</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="<?php echo constant('URL'); ?>usuarios/registro">Registrarse</a>
+            <a class="nav-link text-light" href="<?php echo constant('URL'); ?>usuarios/verRegistro">Registrarse</a>
           </li>
         <?php } ?>
       </ul>
