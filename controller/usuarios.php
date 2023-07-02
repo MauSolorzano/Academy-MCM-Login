@@ -15,7 +15,7 @@ class Usuarios extends Controller
   function render()
   {
     if (!parent::sesionIniciada()) {
-      header("Location: " . constant('URL') . "usuarios/verLogin");
+      header("Location: " . constant('URL') . "usuarios/login");
       exit();
     }
 
@@ -28,7 +28,7 @@ class Usuarios extends Controller
   {
     if (!parent::sesionIniciada()) {
       // Redirigir al inicio de sesión o mostrar un mensaje de error
-      header("Location: " . constant('URL') . "usuarios/verLogin");
+      header("Location: " . constant('URL') . "usuarios/login");
       exit();
     }
 
@@ -56,25 +56,25 @@ class Usuarios extends Controller
     $this->view->mensajeResultado = $mensajeResultado;
     //var_dump($mensajeResultado);
     $this->render();
-
   }
 
-  function detalle(){
+  function detalle()
+  {
     if (!parent::sesionIniciada()) {
-        // Redirigir al inicio de sesión o mostrar un mensaje de error
-        header("Location: " . constant('URL') . "usuarios/verLogin");
-        exit();
-      }                      
+      // Redirigir al inicio de sesión o mostrar un mensaje de error
+      header("Location: " . constant('URL') . "usuarios/login");
+      exit();
+    }
     $this->view->datos = [];
     $this->view->mensaje = "Detalles del Cursos";
     $this->view->render('usuario/detalle');
-}
+  }
 
   function verUsuario($param = null)
   {
     if (!parent::sesionIniciada()) {
       // Redirigir al inicio de sesión o mostrar un mensaje de error
-      header("Location: " . constant('URL') . "usuarios/verLogin");
+      header("Location: " . constant('URL') . "usuarios/login");
       exit();
     }
     $id = $param[0];
@@ -87,17 +87,17 @@ class Usuarios extends Controller
 
   function actualizarusuario()
   {
-    
-    
+
+
     if ($this->model->actualizarusuario($_POST)) {
-      
+
       $datos = new classUsuarios();
       foreach ($_POST as $key => $value) {
-        
+
         # code...
         $datos->$key = $value;
       }
-     
+
       $mensajeResultado = '
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -110,7 +110,7 @@ class Usuarios extends Controller
         No se actualizo el registro
       </div>';
     }
-    
+
     $this->view->datos = $datos;
     $this->view->mensajeResultado = $mensajeResultado;
     $this->render();
@@ -119,9 +119,9 @@ class Usuarios extends Controller
   function eliminarusuario($param = null)
   {
     if (!parent::sesionIniciada()) {
-      header("Location: " . constant('URL') . "usuarios/verLogin");
+      header("Location: " . constant('URL') . "usuarios/login");
       exit();
-    } 
+    }
     $id = $param[0];
     if ($this->model->eliminarusuario($id)) {
       $mensajeResultado = '
@@ -138,13 +138,14 @@ class Usuarios extends Controller
     }
     $this->view->mensajeResultado = $mensajeResultado;
     $this->render();
-
   }
 
 
   function verLogin()
   {
-    $this->view->render('usuarios/login');
+    header("Location: " . constant('URL') . "usuarios/login");
+    exit();
+    //$this->view->render('usuarios/login');
   }
 
   function autenticar()
@@ -162,8 +163,7 @@ class Usuarios extends Controller
       $_SESSION['id'] = $usuario->id;
       $_SESSION['name'] = $usuario->name;
 
-      $this->view->render('main/index');
-
+      $this->view->render('index');
     } else {
       $mensajeResultado = '
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -181,7 +181,7 @@ class Usuarios extends Controller
     session_destroy();
     session_write_close();
 
-    header("Location: " . constant('URL') . "main/");
+    header("Location: " . constant('URL') . "index");
 
     exit();
   }
@@ -226,13 +226,9 @@ class Usuarios extends Controller
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     No se registro
                 </div>';
-                $this->view->mensajeResultado = $mensajeResultado;
-      $this->view->render('usuarios/registro');
+        $this->view->mensajeResultado = $mensajeResultado;
+        $this->view->render('usuarios/registro');
       }
-
     }
   }
-
 }
-
-?>

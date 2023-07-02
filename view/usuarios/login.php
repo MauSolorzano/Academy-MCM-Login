@@ -34,7 +34,7 @@ require 'view/menu.php';
               <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
           </div>
 
-          <p class="my-2">Resgistrarse <a href="<?php echo constant('URL'); ?>usuarios/verRegistro" class="">aquí</a></p>
+          <p class="my-2">Resgistrarse <a href="<?php echo constant('URL'); ?>usuarios/registro" class="">aquí</a></p>
 
         </form>
       </div>
