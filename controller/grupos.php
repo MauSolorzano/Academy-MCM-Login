@@ -28,9 +28,9 @@ class Grupos extends Controller{
         $this->view->render('grupos/crear');
     }
 
-    function insertarCurso(){
+    function insertargrupo(){
         //var_dump($_POST);
-        if ($this->model->insertarCurso($_POST)){
+        if ($this->model->insertargrupo($_POST)){
             $mensajeResultado = '
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -54,7 +54,7 @@ class Grupos extends Controller{
           }                       
         $this->view->datos = [];
         $this->view->mensaje = "Detalles del Cursos";
-        $this->view->render('cursos/detalle');
+        $this->view->render('grupos/detalle');
     }
     function vergrupos( $param = null ){   
         if (!parent::sesionIniciada()) {
@@ -95,9 +95,9 @@ class Grupos extends Controller{
                 </div>';
         }
         $this->view->datos = $datos;
-        $this->view->mensaje = "Detalle Curso";
+        $this->view->mensaje = "Detalle Grupo";
         $this->view->mensajeResultado = $mensajeResultado;        
-        $this->view->render('cursos/detalle');
+        $this->view->render('grupos/detalle');
     }    
     function eliminargrupo( $param = null ){   
         if (!parent::sesionIniciada()) {
@@ -105,7 +105,7 @@ class Grupos extends Controller{
             exit();
           }
         $id = $param[0];
-        if ($this->model->eliminar($id)){
+        if ($this->model->eliminargrupo($id)){
             $mensajeResultado = '
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

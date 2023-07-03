@@ -33,12 +33,9 @@ class GruposModel extends Model{
     }
 
     public function insertargrupo($datos){
-        
-//# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
         try {
             //code...
-            //$datos['id'] = "0";
-            //$datos['usuario'] = "Prof Mario";
+            $datos['id'] = "0";
             $stringSQL = 'INSERT INTO grupo(id, nombre) VALUES ( :id, :nombre);';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
@@ -46,7 +43,7 @@ class GruposModel extends Model{
 
         } catch (PDOException $th) {
             //throw $th;
-            //var_dump($th);
+            var_dump($th);
             return false;
         }
     }
@@ -77,7 +74,7 @@ class GruposModel extends Model{
         try {
             //code...     
             var_dump($datos);                         
-            $datos['usuario'] = "Prof Mario";
+            //$datos['usuario'] = "Prof Mario";
             $stringSQL = 'UPDATE grupo SET nombre=:nombre WHERE id=:id ;';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
