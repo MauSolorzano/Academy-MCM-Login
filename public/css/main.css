@@ -1,5 +1,5 @@
 body {
-  background-color: #a2b2ee;
+  /*background-color: #a2b2ee;*/
   color: #2e3239;
   /* color: #2e3239; */
 }
@@ -12,7 +12,7 @@ body {
 }
 
 #apartado {
-  background-color: #5f7adb;
+  background-color: #b0badf;
   padding: 50px;
   margin-top: 30px;
   margin-bottom: 30px;

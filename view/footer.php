@@ -1,9 +1,25 @@
-<footer class="bg-light text-center text-lg-start">
-  <div class="text-center p-3 text-muted" style="background-color: rgba(46, 50, 57);">
-    © 2023 Copyright:
-    <a class="text-muted" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-</footer>
+<footer class="footer bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h4>Sobre Nosotros</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla, ipsum eu euismod facilisis.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <h4>Contacto</h4>
+          <p>Dirección: 123 Calle Principal, Ciudad</p>
+          <p>Teléfono: +123456789</p>
+          <p>Email: info@tudominio.com</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <hr>
+          <p>&copy; 2023 Tu Compañía. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

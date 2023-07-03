@@ -14,7 +14,8 @@ require 'view/menu.php';
         table-hover	
         table-borderless
         table-muted
-        align-middle">
+        align-middle
+        table-dark">
             <thead class="table-muted">
                 <caption><?php echo $this->mensaje; ?></caption>
                 <tr>
