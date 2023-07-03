@@ -94,10 +94,10 @@ class Grupos extends Controller{
                     No se actualizo el Registro
                 </div>';
         }
-        $this->view->datos = $datos;
-        $this->view->mensaje = "Detalle Grupo";
+        // $this->view->datos = $datos;
+        // $this->view->mensaje = "Detalle Grupo";
         $this->view->mensajeResultado = $mensajeResultado;        
-        $this->view->render('grupos/detalle');
+        $this->render();
     }    
     function eliminargrupo( $param = null ){   
         if (!parent::sesionIniciada()) {

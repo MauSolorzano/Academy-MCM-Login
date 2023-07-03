@@ -95,10 +95,10 @@ class Estudiantes extends Controller{
                     No se actualizo el Registro
                 </div>';
         }
-        $this->view->datos = $datos;
-        $this->view->mensaje = "Detalle Estudiante";
+        // $this->view->datos = $datos;
+        // $this->view->mensaje = "Detalle Estudiante";
         $this->view->mensajeResultado = $mensajeResultado;        
-        $this->view->render('estudiantes/detalle');
+        $this->render();
     }    
 
     //eliminarcurso
