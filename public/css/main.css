@@ -19,7 +19,13 @@ body {
   width: auto;
   border-radius: 9px;
 }
-
+#galeria {
+  padding: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: auto;
+  border-radius: 9px;
+}
 #P1,
 #P2,
 #P3 {
