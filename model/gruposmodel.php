@@ -73,7 +73,7 @@ class GruposModel extends Model{
     {
         try {
             //code...     
-            var_dump($datos);                         
+            //var_dump($datos);                         
             //$datos['usuario'] = "Prof Mario";
             $stringSQL = 'UPDATE grupo SET nombre=:nombre WHERE id=:id ;';
             $query = $this->db->connect()->prepare($stringSQL);
